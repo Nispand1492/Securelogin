@@ -1,62 +1,32 @@
 ************* Module tmp1
-C:  1, 0: No space allowed before :
-def ins_sort(a) :
-
-                ^ (bad-whitespace)
-C:  3, 0: Unnecessary parens after 'while' keyword (superfluous-parens)
-C:  5, 0: Unnecessary parens after 'if' keyword (superfluous-parens)
-C:  5, 0: Exactly one space required around comparison
-        if(i==1):
-
-            ^^ (bad-whitespace)
-C:  6, 0: Exactly one space required around assignment
-            a[1]=a[i]
-
-                ^ (bad-whitespace)
-C:  7, 0: No space allowed before :
-        else :
-
-             ^ (bad-whitespace)
-C:  9, 0: Unnecessary parens after 'while' keyword (superfluous-parens)
-C:  9, 0: Exactly one space required before comparison
-            while (a[j]< a[i]):
-
-                       ^ (bad-whitespace)
-C: 13, 0: Exactly one space required around comparison
-            while k>=j :
-
-                   ^^ (bad-whitespace)
-C: 13, 0: No space allowed before :
-            while k>=j :
-
-                       ^ (bad-whitespace)
-C: 23, 0: Exactly one space required after comma
-for i in range(1,int(n)):
-
-                ^ (bad-whitespace)
-C: 26, 0: Final newline missing (missing-final-newline)
+C:  1, 0: Exactly one space required after comma
+def permutation(s1,t1):
+                  ^ (bad-whitespace)
+C:  2, 0: Unnecessary parens after 'if' keyword (superfluous-parens)
+C:  2, 0: Exactly one space required around comparison
+    if(len(s1)!=len(t1)):
+              ^^ (bad-whitespace)
+C:  8, 0: Trailing whitespace (trailing-whitespace)
+C: 11, 0: Final newline missing (missing-final-newline)
+C: 11, 0: Exactly one space required after comma
+permutation("hello","ollah")
+                   ^ (bad-whitespace)
 C:  1, 0: Missing module docstring (missing-docstring)
-W:  2, 4: Redefining name 'i' from outer scope (line 23) (redefined-outer-name)
-W:  1,13: Redefining name 'a' from outer scope (line 21) (redefined-outer-name)
-C:  1, 0: Invalid argument name "a" (invalid-name)
+C:  1, 0: Invalid argument name "s1" (invalid-name)
+C:  1, 0: Invalid argument name "t1" (invalid-name)
 C:  1, 0: Missing function docstring (missing-docstring)
-C: 20, 0: Invalid constant name "n" (invalid-name)
-C: 21, 0: Invalid constant name "a" (invalid-name)
-
+C:  6,12: Invalid variable name "c" (invalid-name)
+E:  7,23: Undefined variable 'ascii' (undefined-variable)
+W:  5, 8: Unused variable 'lenth' (unused-variable)
+W:  7,12: Unused variable 'intc' (unused-variable)
 
 
 Report
-
 ======
-
-22 statements analysed.
-
-
+7 statements analysed.
 
 Statistics by type
-
 ------------------
-
 
 +---------+-------+-----------+-----------+------------+---------+
 |type     |number |old number |difference |%documented |%badname |
@@ -67,40 +37,30 @@ Statistics by type
 +---------+-------+-----------+-----------+------------+---------+
 |method   |0      |0          |=          |0           |0        |
 +---------+-------+-----------+-----------+------------+---------+
-|function |1      |1          |=          |0.00        |0.00     |
+|function |1      |2          |-1.00      |0.00        |0.00     |
 +---------+-------+-----------+-----------+------------+---------+
 
 
 
-
-
-
 Raw metrics
-
 -----------
-
 
 +----------+-------+------+---------+-----------+
 |type      |number |%     |previous |difference |
 +==========+=======+======+=========+===========+
-|code      |24     |85.71 |22       |+2.00      |
+|code      |8      |66.67 |33       |-25.00     |
 +----------+-------+------+---------+-----------+
 |docstring |0      |0.00  |0        |=          |
 +----------+-------+------+---------+-----------+
-|comment   |0      |0.00  |0        |=          |
+|comment   |0      |0.00  |1        |-1.00      |
 +----------+-------+------+---------+-----------+
-|empty     |4      |14.29 |6        |-2.00      |
+|empty     |4      |33.33 |10       |-6.00      |
 +----------+-------+------+---------+-----------+
-
-
-
 
 
 
 Duplication
-
 -----------
-
 
 +-------------------------+------+---------+-----------+
 |                         |now   |previous |difference |
@@ -112,63 +72,49 @@ Duplication
 
 
 
-
-
-
 Messages by category
-
 --------------------
-
 
 +-----------+-------+---------+-----------+
 |type       |number |previous |difference |
 +===========+=======+=========+===========+
-|convention |17     |12       |+5.00      |
+|convention |11     |22       |-11.00     |
 +-----------+-------+---------+-----------+
 |refactor   |0      |0        |=          |
 +-----------+-------+---------+-----------+
-|warning    |2      |1        |+1.00      |
+|warning    |2      |3        |-1.00      |
 +-----------+-------+---------+-----------+
-|error      |0      |1        |-1.00      |
+|error      |1      |0        |+1.00      |
 +-----------+-------+---------+-----------+
-
-
-
 
 
 
 Messages
-
 --------
-
 
 +----------------------+------------+
 |message id            |occurrences |
 +======================+============+
-|bad-whitespace        |8           |
-+----------------------+------------+
-|superfluous-parens    |3           |
-+----------------------+------------+
 |invalid-name          |3           |
 +----------------------+------------+
-|redefined-outer-name  |2           |
+|bad-whitespace        |3           |
++----------------------+------------+
+|unused-variable       |2           |
 +----------------------+------------+
 |missing-docstring     |2           |
++----------------------+------------+
+|undefined-variable    |1           |
++----------------------+------------+
+|trailing-whitespace   |1           |
++----------------------+------------+
+|superfluous-parens    |1           |
 +----------------------+------------+
 |missing-final-newline |1           |
 +----------------------+------------+
 
 
 
-
-
-
 Global evaluation
-
 -----------------
+Your code has been rated at -15.71/10 (previous run: 2.19/10, -17.90)
 
-Your code has been rated at 1.36/10 (previous run: 1.43/10, -0.06)
-
-
-
-No config file found, using default configuration

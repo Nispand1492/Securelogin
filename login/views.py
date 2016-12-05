@@ -9,6 +9,7 @@ from django.core.files.storage import default_storage
 import fileinput
 import pylint.lint
 import pdb
+from subprocess import check_output,CalledProcessError
 import subprocess
 import json
 def make_connection():
@@ -84,7 +85,14 @@ def upload_file(request):
         with default_storage.open(filename,'wb+') as destination :
             for chunk in f.chunks():
                 destination.write(chunk)
-        stdoutdata = subprocess.getoutput("pylint tmp1.py")
+        #stdoutdata = subprocess.call(['pylint','/home/ubuntu/Securelogin/tmp1.py'],stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
+        try:
+            stdoutdata = subprocess.check_output("/usr/local/bin/pylint /home/ubuntu/Securelogin/tmp1.py",shell = True)
+        except CalledProcessError as e:
+            stdoutdata = e.output
+        
+        ratdata = subprocess.check_output("rats --quiet --html -w 3 /home/ubuntu/Securelogin/tmp1.py",shell=True)
+        print(ratdata)
         print(str(stdoutdata))
         fileop.write(str(stdoutdata))
         fileop.close()
